@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 100% 98.5%;
+    --foreground: 240 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 15%;
+
+    /* Primary: #6C63FF */
+    --primary: 244 100% 70%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 244 100% 96%;
+
+    /* Accent: #FF6584 */
+    --accent: 348 100% 70%;
+    --accent-foreground: 0 0% 100%;
+    --accent-soft: 348 100% 96%;
+
+    /* Success: #43D787 */
+    --success: 147 64% 55%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 147 64% 94%;
+
+    /* Warning: #FFB946 */
+    --warning: 36 100% 64%;
+    --warning-foreground: 240 20% 15%;
+    --warning-soft: 36 100% 94%;
+
+    /* Info / blue */
+    --info: 210 100% 60%;
+    --info-foreground: 0 0% 100%;
+    --info-soft: 210 100% 95%;
+
+    --secondary: 240 30% 96%;
+    --secondary-foreground: 240 20% 15%;
+
+    --muted: 240 20% 96%;
+    --muted-foreground: 240 10% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-soft: 0 84% 95%;
+
+    --border: 240 20% 92%;
+    --input: 240 20% 92%;
+    --ring: 244 100% 70%;
+
+    --radius: 1rem;
+
+    --shadow-card: 0 4px 20px -4px hsl(244 100% 70% / 0.08);
+    --shadow-elegant: 0 10px 40px -10px hsl(244 100% 70% / 0.25);
+    --gradient-primary: linear-gradient(135deg, hsl(244 100% 70%), hsl(260 100% 75%));
+    --gradient-accent: linear-gradient(135deg, hsl(348 100% 70%), hsl(15 100% 70%));
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-accent { background: var(--gradient-accent); }
+
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+
+  .animate-fade-in { animation: fadeIn 0.3s ease-out; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
